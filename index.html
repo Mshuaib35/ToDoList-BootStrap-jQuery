@@ -23,39 +23,56 @@
 
     <!-- Input box -->
     <div class="row">
+
       <div class="col-md-7">
         <div class="form-group">
-          <label for="inpNewTask">New Task</label>
-          <input type="text" class="form-control" id="inpNewTask" 
-                        aria-describedby="newTaskHelp" 
-                        placeholder="Enter the name of the task">
-          <small id="newTaskHelp" class="form-text text-muted">A short one line description of your task</small>
+                    <label for="inpNewTask">New Task</label>
+                    <input type="text" class="form-control" id="inpNewTask" 
+                    aria-describedby="newTaskHelp" 
+                    placeholder="Enter the name of the task">
+                    <small id="newTaskHelp" 
+                    class="form-text text-muted">A short one line description of your task</small>
         </div>
       </div>
 
-      <!--  Buttons -->
+      <!-- -------------- Buttons---------------- -->
+
+
+      <!-- col-6 means for full display of browser
+           col-md-5 means for medium size of browser
+           col-sm-3 means for small size of browser
+           p-1 means padding 
+           "btn btn-success col" is special button that changes the color of buttons
+           "fas fa-plus-square" adds the icon using bootstrap-->
+
+
       <div class="col-md-5">
-        <div class="row">
-          <div class="col-6 col-sm-3 col-md-6 p-1">
-            <button class="btn btn-success col" id="btnAdd">
+        <div class="row">  
+                <!-- Add Button -->
+          <div class="col-6 col-sm-3 col-md-6 p-1">  
+            <button class="btn btn-success col" disabled  id="btnAdd">
               <i class="fas fa-plus-square"></i> Add
             </button>
           </div>
+                <!-- Reset Button -->
           <div class="col-6 col-sm-3 col-md-6  p-1">
-            <button class="btn btn-danger col" id="btnReset">
+            <button class="btn btn-danger col" disabled  id="btnReset">
               <i class="fas fa-backspace"></i> Reset
             </button>
           </div>
+                <!-- Sort Button -->
           <div class="col-6 col-sm-3 col-md-6  p-1">
-            <button class="btn btn-info col" id="btnSort">
+            <button class="btn btn-info col" disabled  id="btnSort">
               <i class="fas fa-sort-amount-down"></i> Sort
             </button>
           </div>
+                <!-- Cleanup Button -->
           <div class="col-6 col-sm-3 col-md-6  p-1">
-            <button class="btn btn-warning col" id="btnCleanup">
+            <button class="btn btn-warning col" disabled  id="btnCleanup">
               <i class="fas fa-trash-alt"></i> Cleanup
             </button>
           </div>
+
         </div>
         
       </div>

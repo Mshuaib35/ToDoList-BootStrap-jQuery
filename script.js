@@ -19,15 +19,26 @@ function addItem()
       
         ulTasks.append(listItem)
         inpNewTask.val('')
+        toggleInputButtons()
 
     }
 
+    //Clear Button Function
     function clearDone() {
         $('#ulTasks .done').remove()
+        toggleInputButtons()
       }
-
+    //Sort Button Function 
       function sortTasks() {
         $('#ulTasks .done').appendTo(ulTasks)
+      }
+
+
+      function toggleInputButtons() {
+        btnReset.prop('disabled', inpNewTask.val() == '') //if the input text is null then Buttons will be disabled
+        btnAdd.prop('disabled', inpNewTask.val() == '')
+        btnSort.prop('disabled', ulTasks.children().length < 1) //if there is no task then the Buttons will be disabled
+        btnCleanup.prop('disabled', ulTasks.children().length < 1)//ulTasks.children().length = 0 if the task is empty
       }
 
    
@@ -36,9 +47,14 @@ function addItem()
 
 })
 
+inpNewTask.on('input', toggleInputButtons)
+
 btnAdd.click(addItem)
 
-btnReset.click(() => inpNewTask.val(''))
+btnReset.click(() => {
+    inpNewTask.val('')
+    toggleInputButtons()
+  })
 
 btnCleanup.click(clearDone)
 
